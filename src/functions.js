@@ -17,8 +17,24 @@ function throwErrorIfNegative(x) {
   return x
 }
 
+class NegativeError extends Error {
+  constructor(message) {
+    super(message)
+    this.name = "NegativeError"
+  }
+}
+
+function add(x, y) {
+  if (x < 0 || y < 0) {
+    throw new NegativeError("음수 노노해")
+  }
+  return x + y
+}
+
 module.exports = {
   addSync,
   addAsync,
-  throwErrorIfNegative
+  throwErrorIfNegative,
+  add,
+  NegativeError
 }

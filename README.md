@@ -8,6 +8,8 @@
 이번 프로젝트에서는 Node.js 기반 소프트웨어를 테스트하는 방법과, Testability를 고려한 설계 방법, 지속적인 통합(Continuous Integration, CI)를 다룹니다.
 
 - [assert 내장 모듈](https://nodejs.org/api/assert.html)
+  - assert.equal, assert.deepEqual, assert.strictEqual, assert.deepStrictEqual
+  -
 - [Mocha test framework](https://mochajs.org/)
 - [SuperAgent](http://visionmedia.github.io/superagent/) & [SuperTest](https://github.com/visionmedia/supertest)
 - [Testability]를 높이기 위한 [의존성 주입](https://ko.wikipedia.org/wiki/%EC%9D%98%EC%A1%B4%EC%84%B1_%EC%A3%BC%EC%9E%85)과 [Sinon](http://sinonjs.org/)

@@ -3,10 +3,28 @@ const assert = require('assert')
 const {
   addAsync,
   addSync,
-  throwErrorIfNegative
+  throwErrorIfNegative,
+  add,
+  NegativeError
 } = require('../src/functions')
 
 describe('functions', function () {
+  describe('mult', () => {
+    it('곱 정상작동 확인', () => {
+      const result = add(1, 2)
+      assert.equal(result, 3)
+    })
+    it('곱 앞 음수 에러', () => {
+      assert.throws(() => {
+        add(-1, 2)
+      }, NegativeError)
+    })
+    it('곱 뒤 음수 에러', () => {
+      assert.throws(() => {
+        add(1, -2)
+      }, NegativeError)
+    })
+  })
   describe('addSync', function() {
     it('기본 기능', function() {
       const result = addSync(1, 2)
