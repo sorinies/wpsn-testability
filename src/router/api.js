@@ -1,9 +1,15 @@
+require('../../env')
 const express = require('express')
 const bodyParser = require('body-parser')
 const validator = require('validator')
+const bugsnag = require('bugsnag')
 
 const query = require('../query')
 const error = require('../error')
+
+bugsnag.register(process.env.BUGSNAG_KEY)
+
+const errorHandlerMiddleware = bugsnag.errorHandler
 
 module.exports = ({postMessage}) => {
   const router = express.Router()
